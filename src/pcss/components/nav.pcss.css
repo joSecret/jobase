@@ -1,0 +1,23 @@
+.nav {
+  --_nav-link--c: var(--nav-link--c, var(--link-c));
+  --_nav-link--c_a: var(--nav-link--c_a, var(--link-c_h));
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: var(--nav-link--display, flex);
+  flex-wrap: var(--nav-link--wrap, wrap);
+
+  .nav--link {
+    --link-c: var(--_nav-link--c);
+    --link-decoration: var(--nav-link--decoration, none);
+    --link-c_h: var(--_nav-link--c_a);
+
+    transition: var(--t-base);
+
+    &.active {
+      --link-c: var(--_nav-link--c_a);
+    }
+  }
+}
