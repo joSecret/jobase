@@ -6,6 +6,8 @@ import '@pcss/buttons.pcss.css';
 import '@pcss/containers.pcss.css';
 import '@pcss/images.pcss.css';
 
+import { AstroFont } from 'astro-font';
+
 interface Props {
   title: string;
   description: string;
@@ -44,3 +46,19 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta property='twitter:title' content={title} />
 <meta property='twitter:description' content={description} />
 <meta property='twitter:image' content={new URL(image, Astro.url)} />
+
+<AstroFont
+  config={[
+    {
+      src: [],
+      name: 'Poppins',
+      // Google Fonts URL
+      googleFontsURL:
+        'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,700&display=swap',
+      preload: true,
+      display: 'swap',
+      selector: 'body',
+      fallback: 'sans-serif',
+    },
+  ]}
+/>
