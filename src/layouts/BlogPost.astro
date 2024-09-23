@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { SITE } from '@/const';
 import Html from '@layouts/Html.astro';
 import FormattedDate from '@comp/FormattedDate.astro';
 
@@ -9,9 +10,19 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <Html>
-  <article>
-    <div class='hero-image'>
-      {heroImage && <img width={1020} height={510} src={heroImage} alt='' />}
+  <article class='container'>
+    <div class='hero-image container--full'>
+      {
+        heroImage && (
+          <img
+            width={1020}
+            height={510}
+            src={`/${SITE.BASE_PATH}${heroImage}`}
+            alt=''
+            class='img-width'
+          />
+        )
+      }
     </div>
     <div class='prose'>
       <div class='title'>

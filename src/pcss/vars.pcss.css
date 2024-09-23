@@ -26,11 +26,11 @@
   --t-base: all var(--t-time) ease-in-out;
 
   /* Body */
-  --body-c: var(--c-gray-400);
+  --body-c: #475467;
   --body-bg: var(--c-white);
 
   /* Link */
-  --link-c: var(--c-gray-200);
+  --link-c: var(--c-primary);
   --link-c_h: var(--c-primary);
   --link-decoration: none;
   --link-decoration-h: none;
@@ -58,7 +58,7 @@
   --h-fstyle: inherit;
   --h-fw: 500;
   --h-lh: 1.2;
-  --h-c: var(--c-gray-200);
+  --h-c: var(--c-gray-900);
 
   --fs-h1: 3rem;
   --fs-h2: 20px;
@@ -103,7 +103,7 @@
   --c-gray-700: #333;
   --c-gray-800: #151515;
   --c-gray-900: #212529;
-  --c-primary: #5eead4;
+  --c-primary: #7f56d9;
   --c-secondary: #dee2e6;
   --c-success: #198754;
   --c-warning: #ffc107;

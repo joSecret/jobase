@@ -1,6 +1,4 @@
 :root {
-  --gutter-x: var(--gutter);
-  --gutter-y: var(--gutter);
   --container-py: var(--gutter);
 
   @media (--sm) {
@@ -24,50 +22,20 @@
   }
 }
 
-.container,
-.container-fluid {
-  width: 100%;
-  padding-inline: var(--container-py);
-  margin-inline: auto;
-
-  @media (--md) {
-    padding-right: calc(var(--gutter-x) * 0.5);
-    padding-left: calc(var(--gutter-x) * 0.5);
-  }
-}
-
 .container {
-  max-width: var(--container-mw, 100%);
-}
-
-.container-grid {
   display: grid;
   grid-template-columns:
-    [full-start] minmax(20px, auto)
-    [semi-start] auto
-    [container-start right-start]
-    var(--container-mw, 1fr)
+    [full-start] minmax(20px, 1fr)
+    [container-start]
+    var(--container-mw, calc(100% - 40px))
     [container-end]
-    auto [semi-end]
-    minmax(20px, auto) [full-end right-end];
+    minmax(20px, 1fr) [full-end];
 
   & > * {
     grid-column: container;
   }
 
-  & > .full {
+  & > .container--full {
     grid-column: full;
-  }
-
-  & > .semi {
-    grid-column: semi;
-  }
-
-  & > .right-down {
-    grid-column: right;
-
-    @media (--switchUp) {
-      grid-column: container;
-    }
   }
 }

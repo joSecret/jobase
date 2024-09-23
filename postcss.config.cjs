@@ -1,11 +1,10 @@
 
 const postcssAdvancedVar = require('postcss-advanced-variables');
+const postcssCustomMediaGenerator = require('postcss-custom-media-generator');
 const postcssNested = require('postcss-nested');
-// const postcss = require('postcss');
 const postcssCalc = require("postcss-calc");
 const postcssUrl = require('postcss-url');
 const postcssPresetEnv = require('postcss-preset-env');
-// cspell:ignore pxtorem
 const postcssPixelsToRem = require('postcss-pxtorem');
 const cssnano = require('cssnano');
 const postcssEach = require('postcss-each');
@@ -16,6 +15,16 @@ module.exports = {
 
     postcssNested,
 
+    postcssCustomMediaGenerator({
+      "--light": "prefers-color-scheme: light",
+      "--dark": "prefers-color-scheme: dark",
+      sm: 576,
+      md: 768,
+      lg: 992,
+      xl: 1200,
+      xxl: 1400,
+    }),
+
     postcssPresetEnv({
       stage: 2,
       preserve: false,
@@ -24,17 +33,17 @@ module.exports = {
         grid: 'no-autoplace',
       },
 
-      importFrom: {
-        customMedia: {
-          '--sm': '(min-width: 576px)',
-          '--md': '(min-width: 768px)',
-          '--switchDown': '(max-width: 991px)',
-          '--switchUp': '(min-width: 992px)',
-          '--lg': '(min-width: 992px)',
-          '--xl': '(min-width: 1200px)',
-          '--xxl': '(min-width: 1400px)',
-        }
-      },
+      // importFrom: {
+      //   customMedia: {
+      //     '--sm': '(min-width: 576px)',
+      //     '--md': '(min-width: 768px)',
+      //     '--switchDown': '(max-width: 991px)',
+      //     '--switchUp': '(min-width: 992px)',
+      //     '--lg': '(min-width: 992px)',
+      //     '--xl': '(min-width: 1200px)',
+      //     '--xxl': '(min-width: 1400px)',
+      //   }
+      // },
 
       features: {
         'custom-properties': false,

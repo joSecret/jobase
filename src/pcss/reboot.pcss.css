@@ -187,6 +187,8 @@ figure {
 img,
 svg {
   vertical-align: middle;
+  max-width: 100%;
+  height: auto;
 }
 
 /* Tables */
@@ -248,7 +250,7 @@ select {
   text-transform: none;
 }
 
-[role="button"] {
+[role='button'] {
   cursor: pointer;
 }
 
@@ -261,19 +263,19 @@ select {
 }
 
 [list]
-  :not([type="date"])
-  :not([type="datetime-local"])
-  :not([type="month"])
-  :not([type="week"])
-  :not([type="time"])
+  :not([type='date'])
+  :not([type='datetime-local'])
+  :not([type='month'])
+  :not([type='week'])
+  :not([type='time'])
   ::-webkit-calendar-picker-indicator {
   display: none !important;
 }
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
 
   &:not(:disabled) {
@@ -325,7 +327,7 @@ legend {
   height: auto;
 }
 
-[type="search"] {
+[type='search'] {
   outline-offset: -2px;
   -webkit-appearance: textfield;
 }
