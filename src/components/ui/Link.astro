@@ -15,7 +15,5 @@ const isActive = fullHref === pathname;
 <a
   href={`/${SITE.BASE_PATH}${href}`}
   class:list={[className, { active: isActive }]}
-  {...props}
+  {...props}><slot /></a
 >
-  <slot />
-</a>

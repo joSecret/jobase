@@ -1,0 +1,21 @@
+---
+import Html from '@/layouts/Html.astro';
+import Header from '@comp/theme/Header.astro';
+import Footer from '@comp//theme/Footer.astro';
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<Html title={title}>
+  <Header />
+
+  <main class='main'>
+    <slot />
+  </main>
+
+  <Footer />
+</Html>

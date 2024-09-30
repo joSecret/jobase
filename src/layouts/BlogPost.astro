@@ -1,7 +1,8 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { SITE } from '@/const';
-import Html from '@layouts/Html.astro';
+
+import LayoutDefault from './page/default/LayoutDefault.astro';
 import FormattedDate from '@comp/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
@@ -9,7 +10,7 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<Html>
+<LayoutDefault title={`${title} - Blog`}>
   <article class='container'>
     <div class='hero-image container--full'>
       {
@@ -42,4 +43,4 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       <slot />
     </div>
   </article>
-</Html>
+</LayoutDefault>

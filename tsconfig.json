@@ -10,6 +10,8 @@
       "@data/*": ["src/data/*"],
       "@layouts/*": ["src/layouts/*"],
       "@comp/*": ["src/components/*"],
+      "@block/*": ["src/components/snippets/block/*"],
+      "@theme/*": ["src/components/theme/*"],
       "@portfolio/*": ["src/components/portfolio/*"],
     }
   }

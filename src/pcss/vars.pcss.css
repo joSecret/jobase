@@ -7,7 +7,7 @@
   --fs-base: 1rem;
   --fs-sm: 0.875em;
 
-  --fs-lead: calc(var(--fs-base) * 0.125);
+  --fs-lead: calc(var(--fs-base) * 1.25);
 
   /* Font weight*/
   --fw-lighter: 200;
@@ -60,8 +60,8 @@
   --h-lh: 1.2;
   --h-c: var(--c-gray-900);
 
-  --fs-h1: 3rem;
-  --fs-h2: 20px;
+  --fs-h1: 40px;
+  --fs-h2: 32px;
   --fs-h3: 1rem;
   --fs-h4: 1.5rem;
   --fs-h5: 1.25rem;
@@ -69,12 +69,12 @@
 
   /* Sizes */
   --spacer: 1rem;
-  --s-0: 0;
-  --s-1: calc(var(--spacer) * 0.25);
-  --s-2: calc(var(--spacer) * 0.5);
-  --s-3: var(--spacer);
-  --s-4: calc(var(--spacer) * 1.5);
-  --s-5: calc(var(--spacer) * 2);
+  --s0: 0;
+  --s1: calc(var(--spacer) * 0.25);
+  --s2: calc(var(--spacer) * 0.5);
+  --s3: var(--spacer);
+  --s4: calc(var(--spacer) * 1.5);
+  --s5: calc(var(--spacer) * 2);
 
   --gutter: 20px;
 

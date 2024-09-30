@@ -1,4 +1,24 @@
-@import "array-vars.pcss.css";
+@import 'array-vars.pcss.css';
+
+.grid-responsive {
+  --_gr--layout-gap: var(--gr--layout-gap, 20px);
+  --_gr--column-count: var(--gr--column-count, 4);
+  --_gr--cell-minW: var(--gr--cell-minW, 200px);
+
+  /** Calculated values. */
+  --gr--gap-count: calc(var(--_gr--column-count) - 1);
+  --gr--total-gap-width: calc(var(--gr--gap-count) * var(--_gr--layout-gap));
+  --gr-item--maxW: calc(
+    (100% - var(--gr--total-gap-width)) / var(--_gr--column-count)
+  );
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(max(var(--_gr--cell-minW), var(--gr-item--maxW)), 100%), 1fr)
+  );
+  gap: var(--_gr--layout-gap);
+}
 
 .row {
   display: flex;
@@ -16,7 +36,7 @@
   margin-top: var(--gutter-y);
 }
 
-[class*="col-"] {
+[class*='col-'] {
   flex: 0 0 auto;
 }
 

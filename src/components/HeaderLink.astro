@@ -1,8 +1,0 @@
----
-import Link from '@comp/Link.astro';
-const { href, class: className, ...props } = Astro.props;
----
-
-<Link href={href} class:list={([className], 'nav--link')} {...props}>
-  <slot />
-</Link>

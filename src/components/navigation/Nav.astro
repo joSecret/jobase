@@ -2,9 +2,15 @@
 import '@pcss/components/nav.pcss.css';
 import menu from '@data/menu.json';
 
-import HeaderLink from '@comp/HeaderLink.astro';
+import HeaderLink from '@/components/ui/HeaderLink.astro';
 ---
 
-<nav class='nav'>
-  {menu.main.map((nav) => <HeaderLink href={nav.url}>{nav.name}</HeaderLink>)}
-</nav>
+<ul class='nav'>
+  {
+    menu.main.map((nav) => (
+      <li>
+        <HeaderLink href={nav.url}>{nav.name}</HeaderLink>
+      </li>
+    ))
+  }
+</ul>

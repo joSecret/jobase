@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  content?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div class='section container'>
+  <header>
+    <h2 class='h1 section--title'>{title}</h2>
+
+    <div class='section--description'>{description}</div>
+  </header>
+
+  <div class='section--content'>
+    <slot />
+  </div>
+</div>
+
+<style>
+  .section {
+    --_section_pb: 100px;
+  }
+  .section header {
+    justify-self: center;
+    max-width: 465px;
+    text-align: center;
+    padding-block: var(--_section_pb);
+  }
+</style>

@@ -39,13 +39,11 @@
 }
 
 /* Lists */
-.list-unstyled {
-  @mixin list-unstyled;
-}
-
-/* Inline turns list items into inline-block */
-.list-inline {
-  @mixin list-unstyled;
+.list-unstyled,
+  .list-inline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .list-inline-item {

@@ -1,0 +1,55 @@
+---
+import './style.pcss';
+
+import Logo from '@/components/theme/Logo.astro';
+import Nav from '@/components/navigation/Nav.astro';
+import Social from '@/components/theme/Social.astro';
+---
+
+<nav class='w-collapse'>
+  <div class='region-branding'>
+    <Logo />
+
+    <button class='btn btn-link nav-toggler' aria-expanded='false'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='16'
+        height='16'
+        fill='currentColor'
+        viewBox='0 0 16 16'
+      >
+        <path
+          fill-rule='evenodd'
+          d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5'
+        ></path>
+      </svg>
+    </button>
+  </div>
+
+  <div class='nav-collapse'>
+    <div class='region-nav'>
+      <Nav />
+    </div>
+
+    <div class='region-additional'>
+      <Social />
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Select all buttons with the class 'nav-toggler'
+  const togglerButtons = document.querySelectorAll('.nav-toggler');
+
+  togglerButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      const collapseElement = button.closest('.w-collapse');
+      const height = collapseElement.offsetHeight + 'px';
+
+      collapseElement.style.setProperty('--collapse-height', height);
+
+      button.setAttribute('aria-expanded', !isExpanded);
+    });
+  });
+</script>

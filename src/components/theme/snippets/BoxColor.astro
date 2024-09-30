@@ -1,0 +1,36 @@
+---
+interface Props {
+  name: string;
+  hex: string;
+  color?: string;
+  bg?: string;
+}
+
+const { name, hex, color = 'white' } = Astro.props;
+---
+
+<div class='snippet snippet-color'>
+  <div class=`bg-${name} text-${color} rounded mb-2`>
+    <small>{hex}</small>
+    <span>.bg-{name}</span>
+  </div>
+
+  <span class=`text-${name} bg-${color}`>.text-{name}</span>
+</div>
+
+<style>
+  .snippet-color > div {
+    aspect-ratio: 16 / 9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 0.2rem 1.25rem 0 rgba(27, 30, 36, 0.07);
+  }
+
+  .snippet-color > span {
+    display: block;
+    text-align: center;
+    margin-block-start: 8px;
+  }
+</style>

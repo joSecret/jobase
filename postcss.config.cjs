@@ -20,6 +20,8 @@ module.exports = {
       "--dark": "prefers-color-scheme: dark",
       sm: 576,
       md: 768,
+      "--switchDown": "(max-width: 991px)",
+      "--switchUp": "(min-width: 992px)",
       lg: 992,
       xl: 1200,
       xxl: 1400,
@@ -33,18 +35,6 @@ module.exports = {
         grid: 'no-autoplace',
       },
 
-      // importFrom: {
-      //   customMedia: {
-      //     '--sm': '(min-width: 576px)',
-      //     '--md': '(min-width: 768px)',
-      //     '--switchDown': '(max-width: 991px)',
-      //     '--switchUp': '(min-width: 992px)',
-      //     '--lg': '(min-width: 992px)',
-      //     '--xl': '(min-width: 1200px)',
-      //     '--xxl': '(min-width: 1400px)',
-      //   }
-      // },
-
       features: {
         'custom-properties': false,
         'blank-pseudo-class': false,
@@ -53,6 +43,7 @@ module.exports = {
         'has-pseudo-class': false,
         'image-set-function': false,
         'prefers-color-scheme-query': false,
+        'logical-properties-and-values': false,
       }
     }),
 
