@@ -1,23 +1,33 @@
 ---
+import '@pcss/components/badge.pcss.css';
 interface Props {
+  underWork?: boolean;
   title: string;
   description?: string;
   content?: string;
 }
 
-const { title, description } = Astro.props;
+const { underWork = false, title, description } = Astro.props;
 ---
 
 <div class='section container'>
   <header>
-    <h2 class='h1 section--title'>{title}</h2>
+    <h2 class='h1 section--title'>
+      {title}
+
+      {underWork && <sup class='badge badge-info'>under work</sup>}
+    </h2>
 
     <div class='section--description'>{description}</div>
   </header>
 
-  <div class='section--content'>
-    <slot />
-  </div>
+  {
+    !underWork && (
+      <div class='section--content container container--full'>
+        <slot />
+      </div>
+    )
+  }
 </div>
 
 <style>
@@ -29,5 +39,9 @@ const { title, description } = Astro.props;
     max-width: 465px;
     text-align: center;
     padding-block: var(--_section_pb);
+
+    &:not(:has(.section--content)) {
+      padding-block-end: 0px;
+    }
   }
 </style>

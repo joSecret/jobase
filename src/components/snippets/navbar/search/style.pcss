@@ -1,0 +1,121 @@
+body:has(.nav-toggle-mob[aria-expanded='true']) {
+  overflow: hidden;
+}
+
+.navbar-search {
+  --collapse-height: 0;
+  --_nav_h: 70px;
+  --_nav_bg: var(--nav_bg, var(--c-white));
+  --_nav_g: var(--nav_g, 0px);
+  --_nav_pb: var(--nav_pb, var(--s3));
+  --_nav_align-menu: var(--nav_align-menu, auto);
+
+  height: var(--_nav_h);
+  transition: 300ms;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows:
+    auto
+    var(--_nav-rMenu_gtr-h, 0fr);
+  gap: var(--_nav_g);
+  padding-block: var(--_nav_pb);
+
+  & > * {
+    overflow-x: hidden;
+  }
+
+  .nav-toggler-desk {
+    display: none;
+  }
+
+  &:has(.nav-toggler--search[aria-expanded='true']) {
+    --_nav-s-search_w: 100%;
+    --_nav-s-search_d: block;
+  }
+
+  .nav-s-baranding {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-start;
+  }
+
+  .nav-s--search {
+    background: var(--_nav_bg);
+    transition: 300ms;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    z-index: 1;
+    justify-self: flex-end;
+    width: var(--_nav-s-search_w, 0px);
+  }
+
+  .nav-s--menu {
+    display: flex;
+  }
+
+  .nav-toggler--search {
+    position: relative;
+    z-index: 2;
+  }
+
+  &:has(.nav-toggler--search[aria-expanded='true']) {
+    .nav-s--search {
+      overflow: visible;
+    }
+  }
+
+  @media (--switchDown) {
+    &:has(.nav-toggler--menu[aria-expanded='true']) {
+      --_nav-rMenu_gtr-h: 1fr;
+
+      height: 100vh;
+      height: 100dvh;
+    }
+  }
+
+  @media (--switchUp) {
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto;
+
+    .nav-toggle-mob {
+      display: none;
+    }
+
+    .nav-toggler-desk {
+      display: inline-block;
+    }
+
+    &:has(.nav-toggler--search[aria-expanded='true']) {
+      --_nav-s-search_d: block;
+      --_nav-s-search_w: 100%;
+    }
+
+    .nav-s-baranding {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+
+    .nav-s--search {
+      grid-column: 2 / -2;
+      grid-row: 1;
+    }
+
+    .nav-collapse {
+      display: contents;
+    }
+
+    .nav-s--menu {
+      grid-column: 2 / 3;
+      grid-row: 1;
+      justify-self: flex-end;
+    }
+
+    .nav-s--additional {
+      grid-column: 3 / -1;
+      grid-row: 1;
+    }
+  }
+}

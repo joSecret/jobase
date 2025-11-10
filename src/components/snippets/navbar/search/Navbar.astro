@@ -1,0 +1,123 @@
+---
+import './style.pcss';
+
+import Logo from '@/components/theme/Logo.astro';
+import Nav from '@/components/navigation/Nav.astro';
+import Social from '@/components/theme/Social.astro';
+---
+
+<nav class='navbar navbar-search'>
+  <div class='nav-s-baranding'>
+    <button
+      class='js--nav-toggler nav-toggle-mob nav-toggler--menu btn btn-link'
+      aria-expanded='false'
+    >
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='16'
+        height='16'
+        fill='currentColor'
+        viewBox='0 0 16 16'
+      >
+        <path
+          fill-rule='evenodd'
+          d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5'
+        ></path>
+      </svg>
+    </button>
+
+    <div class='region-branding'>
+      <Logo />
+    </div>
+
+    <button
+      class='js--nav-toggler nav-toggle-mob nav-toggler--search btn btn-link'
+      aria-expanded='false'
+    >
+      <svg
+        width='20'
+        height='20'
+        viewBox='0 0 20 20'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <path
+          d='M17 17L14.2779 14.2778M16.2222 9.61111C16.2222 13.2623 13.2623 16.2222 9.61111 16.2222C5.95989 16.2222 3 13.2623 3 9.61111C3 5.95989 5.95989 3 9.61111 3C13.2623 3 16.2222 5.95989 16.2222 9.61111Z'
+          stroke='#001968'
+          stroke-width='1.25'
+          stroke-linecap='square'
+          stroke-linejoin='round'></path>
+      </svg>
+    </button>
+  </div>
+
+  <div class='nav-s--search'>
+    <div class='region region-search'>
+      <div class='block block-search'>
+        <form class='d-flex'>
+          <input type='search' placeholder='Search...' />
+          <button class='btn btn-link'>BTN</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class='nav-collapse'>
+    <div class='nav-s--menu'>
+      <div class='region-nav'>
+        <Nav />
+      </div>
+
+      <button
+        class='js--nav-toggler nav-toggler-desk nav-toggler--search btn btn-link'
+        aria-expanded='false'
+      >
+        <svg
+          width='20'
+          height='20'
+          viewBox='0 0 20 20'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path
+            d='M17 17L14.2779 14.2778M16.2222 9.61111C16.2222 13.2623 13.2623 16.2222 9.61111 16.2222C5.95989 16.2222 3 13.2623 3 9.61111C3 5.95989 5.95989 3 9.61111 3C13.2623 3 16.2222 5.95989 16.2222 9.61111Z'
+            stroke='#001968'
+            stroke-width='1.25'
+            stroke-linecap='square'
+            stroke-linejoin='round'></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class='nav-s--additional'>
+      <div class='region-additional d-flex'>
+        <Social />
+        <button class='btn btn-primary'>Download this theme</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Select all buttons with the class 'nav-toggler'
+  const togglerButtons = document.querySelectorAll('.js--nav-toggler');
+
+  togglerButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+      button.setAttribute('aria-expanded', !isExpanded);
+    });
+  });
+</script>
+
+<style>
+  .block-search {
+  }
+
+  .dropdown-search {
+    position: absolute;
+    top: 100%;
+    inset-inline: 0;
+  }
+</style>

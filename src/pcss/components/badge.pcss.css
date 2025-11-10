@@ -30,3 +30,13 @@
   --_badge-c: var(--badge-c, var(--c-primary));
   --_badge-bg: var(--badge-bg, rgb(from var(--c-primary) r g b / 15%));
 }
+
+.badge-secondary {
+  --_badge-c: var(--badge-c, var(--c-secondary));
+  --_badge-bg: var(--badge-bg, rgb(from var(--c-secondary) r g b / 15%));
+}
+
+.badge-info {
+  --_badge-c: var(--badge-c, var(--c-info));
+  --_badge-bg: var(--badge-bg, rgb(from var(--c-info) r g b / 15%));
+}

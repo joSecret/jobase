@@ -1,10 +1,10 @@
 /* Margin and padding */
-@import "api/bg.pcss";
-@import "api/text.pcss";
-@import "api/shadow.pcss";
-@import "api/border.pcss";
-@import "api/display.pcss";
-@import "api/padding_margin.pcss";
+@import 'api/bg.pcss';
+@import 'api/text.pcss';
+@import 'api/shadow.pcss';
+@import 'api/border.pcss';
+@import 'api/display.pcss';
+@import 'api/padding_margin.pcss';
 
 .position-static {
   position: static;
@@ -162,7 +162,7 @@
 }
 
 .font-monospace {
-  font-family: "var(--font-monospace)!important";
+  font-family: 'var(--font-monospace)!important';
 }
 
 .fs-1 {

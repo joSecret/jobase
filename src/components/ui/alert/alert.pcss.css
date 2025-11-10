@@ -1,26 +1,31 @@
 .alert {
-  position: relative;
-  padding: var(--alert-py, 1rem) var(--alert-px, 1rem);
-  margin-bottom: var(--alert-mb, 1rem);
+  --_alert-bg-percentage: var(--alert-bg-percentage, 80%);
+  --_alert-link_c-percentage: var(--alert-link_c-percentage, 20%);
+  --_alert_py: var(--alert_py, 1rem);
+  --_alert_px: var(--alert-px, 1rem);
+  --_alert-mb: var(--alert-mb, 1rem);
+
+  padding: var(--_alert_py) var(--_alert_px);
+  margin-block-end: var(--_alert-mb);
   color: var(--alert-c, inherit);
   background-color: var(
     --alert-bg,
     color-mix(
       in oklab,
       var(--alert-c),
-      var(--c-white) var(--alert-bg-percentage, 90%)
+      var(--c-white) var(--_alert-bg-percentage)
     )
   );
   border: var(--alert-b, 1px solid var(--alert-bc, var(--alert-c)));
   border-radius: var(--alert-br, var(--br));
 
-  & a {
+  a {
     --link-c: var(
       --alert-link-c,
       color-mix(
         in oklab,
         var(--alert-c),
-        var(--c-black) var(--alert-link-c-percentage, 5%)
+        var(--c-black) var(--_alert-link_c-percentage)
       )
     );
   }
@@ -60,19 +65,4 @@
 
 .alert-heading {
   color: var(--alert-heading-c, inherit);
-}
-
-/* ? */
-.alert-dismissible {
-  padding-right: 3rem;
-
-  .btn-close {
-    --btn-c_bg: var(--alert-c);
-
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    padding: 1.25rem 1rem;
-  }
 }

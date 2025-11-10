@@ -1,0 +1,45 @@
+---
+import './banner.pcss';
+
+interface Props {
+  img_url: string;
+  img_alt?: string;
+  over_title?: string;
+  title?: string;
+  btn_text?: string;
+  btn_url?: string;
+}
+
+const {
+  img_url,
+  img_alt = 'img alt',
+  over_title,
+  title,
+  btn_text,
+  btn_url = '#js-scroll-to-section',
+} = Astro.props;
+---
+
+<section class='section section-banner container'>
+  <!-- Promo Content -->
+  {
+    img_url && (
+      <div class='w-img'>
+        <img src={img_url} alt={img_alt} />
+      </div>
+    )
+  }
+
+  <div class='w-content'>
+    <p class='h6 text-uppercase'>{over_title}</p>
+    <h1 class=''>{title}</h1>
+    {
+      btn_text && (
+        <a href={btn_url} class='btn btn-link'>
+          {btn_text}
+        </a>
+      )
+    }
+  </div>
+</section>
+<!-- End Promo Content -->

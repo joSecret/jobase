@@ -2,7 +2,7 @@ body:has(.nav-toggler[aria-expanded='true']) {
   overflow: hidden;
 }
 
-nav {
+.navbar--default {
   --collapse-height: 0;
   --_nav_bg: var(--nav_bg, transparent);
   --_nav_g: var(--nav_g, 0px);
@@ -44,7 +44,6 @@ nav {
 
   @media (--switchUp) {
     --_nav_g: var(--gutter);
-
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto;
 

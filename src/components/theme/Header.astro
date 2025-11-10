@@ -1,7 +1,20 @@
 ---
-import NavbarDefault from '../snippets/navbar/default/NavbarDefault.astro';
+interface Props {
+  headerType?: string;
+}
+
+const { headerType = 'default' } = Astro.props;
+
+const Navbar = (await import(`../snippets/navbar/${headerType}/Navbar.astro`))
+  .default;
 ---
 
 <header class='container'>
-  <NavbarDefault />
+  <Navbar />
 </header>
+
+<style>
+  header {
+    position: relative;
+  }
+</style>

@@ -66,3 +66,14 @@ Check out [our documentation](https://docs.astro.build) or jump into our [Discor
 ## Credit
 
 This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+
+## Credits
+----
+Thanks to the following projects for inspiration and references:
+
+[saicaca/fuwari](https://github.com/saicaca/fuwari)
+[Vivia Preview](https://github.com/saicaca/hexo-theme-vivia)
+[Dev-friendly Portfolio](https://astro.build/themes/details/dev-friendly-portfolio/)
+
+Cool idea:
+[Overview](https://lexingtonthemes.com/viewports/flaco/)

@@ -1,41 +1,63 @@
 :root {
-  --container-py: var(--gutter);
+  --_container_col: var(--container_col, 12);
+  --_container-mob_py: var(--container-mob_py, var(--gutter));
+  --_container_g: var(--container_g, var(--gutter));
+  --_container-mw: calc(100% - var(--_container-mob_py) * 2);
+
+  --_container-calc_mob_py: calc(
+    var(--_container-mob_py) - var(--_container_g)
+  );
+  --container-calc_gap: calc(var(--_container_g) * (var(--_container_col) - 1));
 
   @media (--sm) {
-    --container-mw: 540px;
+    --_container-mw: 540px;
   }
 
   @media (--md) {
-    --container-mw: 720px;
+    --_container-mw: 720px;
   }
 
   @media (--lg) {
-    --container-mw: 880px;
+    --_container-mw: 880px;
   }
 
   @media (--xl) {
-    --container-mw: 1140px;
+    --_container-mw: 1140px;
   }
 
   @media (--xxl) {
-    --container-mw: 1320px;
+    --_container-mw: 1320px;
   }
 }
 
 .container {
   display: grid;
+  gap: var(--_container_g);
   grid-template-columns:
-    [full-start] minmax(20px, 1fr)
-    [container-start]
-    var(--container-mw, calc(100% - 40px))
-    [container-end]
-    minmax(20px, 1fr) [full-end];
+    [full-start]
+    minmax(var(--_container-calc_mob_py), 1fr)
+    [w-start]
+    repeat(
+      var(--_container_col),
+      calc(
+        (var(--_container-mw) - var(--container-calc_gap)) /
+          var(--_container_col)
+      )
+    )
+    [w-end]
+    minmax(var(--_container-calc_mob_py), 1fr)
+    [full-end];
 
-  & > * {
-    grid-column: container;
+  & > *:not(.container--full) {
+    grid-column: w;
   }
 
   & > .container--full {
     grid-column: full;
+  }
+
+  & > .span-wt {
+    /* Wrap text */
+    grid-column: 4 / -4;
   }
 }

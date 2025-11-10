@@ -1,0 +1,51 @@
+---
+import '@pcss/components/accordion.pcss.css';
+import '@pcss/components/close.pcss.css';
+
+import Layout from '@layouts/page/default/LayoutDefault.astro';
+---
+
+<Layout>
+  <div class='container'>
+    <details class='accordion' name='reqs'>
+      <summary class='h1'>Accordion item 1</summary>
+      <div class='accordion-content'>
+        This is the first item's accordion body. It is hidden by default, until
+        the collapse plugin adds the appropriate classes that we use to style
+        each element. These classes control the overall appearance, as well as
+        the showing and hiding via CSS transitions. You can modify any of this
+        with custom CSS or overriding our default variables. It's also worth
+        noting that just about any HTML can go within the .accordion-body,
+        though the transition does limit overflow.
+      </div>
+    </details>
+
+    <details name='reqs'>
+      <summary class='h1'>Accordion item 2</summary>
+      <div class='accordion-content'>
+        This is the first item's accordion body. It is hidden by default, until
+        the collapse plugin adds the appropriate classes that we use to style
+        each element. These classes control the overall appearance, as well as
+        the showing and hiding via CSS transitions. You can modify any of this
+        with custom CSS or overriding our default variables. It's also worth
+        noting that just about any HTML can go within the .accordion-body,
+        though the transition does limit overflow.
+      </div>
+    </details>
+
+    <details name='reqs'>
+      <summary class='h1'>Accordion item 3</summary>
+      <div class='accordion-content'>
+        This is the first item's accordion body. It is hidden by default, until
+        the collapse plugin adds the appropriate classes that we use to style
+        each element. These classes control the overall appearance, as well as
+        the showing and hiding via CSS transitions. You can modify any of this
+        with custom CSS or overriding our default variables. It's also worth
+        noting that just about any HTML can go within the .accordion-body,
+        though the transition does limit overflow.
+      </div>
+    </details>
+  </div>
+</Layout>
+
+<style></style>

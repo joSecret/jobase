@@ -1,0 +1,9 @@
+hr {
+  margin-block: 6.25rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+
+  & + .section header {
+    padding-block-start: 0px !important;
+  }
+}

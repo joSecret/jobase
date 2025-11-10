@@ -51,7 +51,7 @@
   }
 
   &::after {
-    content: "";
+    content: '';
     flex-shrink: 0;
     width: var(--a-btn-icon-width);
     height: var(--a-btn-icon-width);

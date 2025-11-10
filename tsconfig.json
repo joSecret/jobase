@@ -6,10 +6,13 @@
     "paths": {
       "@/*": ["src/*"],
       "@pcss/*": ["src/pcss/*"],
+      "@style/*": ["src/styles/*"],
       "@img/*": ["src/assets/img/*"],
       "@data/*": ["src/data/*"],
       "@layouts/*": ["src/layouts/*"],
       "@comp/*": ["src/components/*"],
+      "@snippets/*": ["src/components/snippets/*"],
+      "@local/*": ["src/components/local/*"],
       "@block/*": ["src/components/snippets/block/*"],
       "@theme/*": ["src/components/theme/*"],
       "@portfolio/*": ["src/components/portfolio/*"],
