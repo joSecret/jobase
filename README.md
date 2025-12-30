@@ -1,50 +1,60 @@
-# Astro Starter Kit: Blog
+# Jobase - Astro Blog Project
 
-```sh
-npm create astro@latest -- --template blog
-```
+A custom Astro-based blog with PostCSS styling and component library.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+## ## Features:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
+- ✅ Astro 5.x with TypeScript support
+- ✅ PostCSS with advanced features (mixins, variables, nested CSS)
+- ✅ Custom component library (alerts, accordions, cards, modals, etc.)
 - ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+- ✅ Sitemap and RSS Feed support
+- ✅ Markdown & MDX support with content collections
+- ✅ Custom icon support via astro-icon
+- ✅ Responsive navigation and banner components
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+The project includes:
+
+The project includes:
 
 ```text
 ├── public/
+│   ├── fonts/          # Custom web fonts
+│   └── img/            # Static images (modals, popovers, tooltips)
 ├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
+│   ├── components/     # Reusable Astro components
+│   │   ├── common/     # Base components (BaseHead)
+│   │   ├── local/      # Project-specific components (Banner, HeaderLink)
+│   │   ├── navigation/ # Navigation components
+│   │   ├── theme/      # Theme components (Header, Footer, Logo)
+│   │   └── ui/         # UI components (Alert, Accordion, Link)
+│   ├── content/        # Content collections (blog posts)
+│   ├── data/           # JSON data files (menu.json)
+│   ├── layouts/        # Page layouts (Html, BlogPost)
+│   ├── pages/          # File-based routing
+│   ├── pcss/           # PostCSS stylesheets
+│   │   ├── api/        # Utility classes (bg, border, padding/margin)
+│   │   ├── base/       # Color palette and scale
+│   │   ├── components/ # Component styles
+│   │   └── custom/     # Custom layouts
+│   └── styles/         # Global CSS
 ├── astro.config.mjs
-├── README.md
+├── postcss.config.cjs
 ├── package.json
 └── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+**Key Directories:**
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+**Key Directories:**
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
+- `src/pages/` - File-based routing (`.astro` and `.md` files become routes)
+- `src/content/` - Content collections with type-safe frontmatter
+- `src/components/` - Organized component library (common, local, theme, ui, navigation)
+- `src/pcss/` - PostCSS modules with custom utilities and component styles
+- `public/` - Static assets served directly
 
 ## 🧞 Commands
 
@@ -59,21 +69,19 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## � Learn More
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Astro Documentation](https://docs.astro.build)
+- [Astro Discord](https://astro.build/chat)
+- [PostCSS Documentation](https://postcss.org/)
 
-## Credit
+## 📦 Dependencies
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+This project uses:
+
+- **Astro 5.x** - Static site generator
+- **PostCSS** - CSS processing with plugins for variables, mixins, nested rules
+- **astro-icon** - Icon component system
+- **astro-font** - Web font optimization
 
 ## Credits
-----
-Thanks to the following projects for inspiration and references:
-
-[saicaca/fuwari](https://github.com/saicaca/fuwari)
-[Vivia Preview](https://github.com/saicaca/hexo-theme-vivia)
-[Dev-friendly Portfolio](https://astro.build/themes/details/dev-friendly-portfolio/)
-
-Cool idea:
-[Overview](https://lexingtonthemes.com/viewports/flaco/)
