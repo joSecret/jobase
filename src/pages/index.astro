@@ -5,7 +5,7 @@ import Section from '@theme/snippets/Section.astro';
 import SubSection from '@theme/snippets/SubSection.astro';
 import Banner from '@local/banner/Banner.astro';
 import About from '@block/about/About.astro';
-import BoxColor from '@/components/theme/snippets/BoxColor.astro';
+import BoxColor from '@/components/theme/snippets/boxColor/BoxColor.astro';
 ---
 
 <Layout>
@@ -25,7 +25,7 @@ import BoxColor from '@/components/theme/snippets/BoxColor.astro';
     title='Colors'
     description="We've updated Bootstrap’s default colors to brighter and trendy color variations in order to improve the contrast and design."
   >
-    <div class='grid-responsive'>
+    <div class='wrapper'>
       <BoxColor name='primary' hex='#59287a' />
       <BoxColor name='secondary' hex='#00c9a7' />
       <BoxColor name='success' hex='#0dd157' />
@@ -41,14 +41,12 @@ import BoxColor from '@/components/theme/snippets/BoxColor.astro';
   <hr />
 
   <Section title='Grid' description='Grid example'>
-    <div class='container--full'>
+    <div class='.wrapper'>
       <div class='bg-primary'>full width</div>
-    </div>
-    <div class='container--full container'>
       <div class='bg-primary span-wt'>span-wt</div>
     </div>
 
-    <div class='grid'>
+    <div class='wrapper'>
       <div class='bg-primary'>nothing</div>
       <div class='bg-primary col-span-2'>col-span-2</div>
       <div class='bg-primary col-span-3'>col-span-3</div>
